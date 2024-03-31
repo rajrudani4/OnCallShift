@@ -1,0 +1,108 @@
+
+// Booststrap functions and variables
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+// Template variables
+@import './variables';
+
+// Bootstrap main SCSS
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+// Template mixins
+@import './mixins/animation';
+@import './mixins/badges';
+@import './mixins/blockquote';
+@import './mixins/breadcrumbs';
+@import './mixins/buttons';
+@import './mixins/cards';
+@import './mixins/misc';
+@import './mixins/no_ui_slider';
+@import './mixins/pagination';
+@import './mixins/popovers';
+@import './mixins/tooltips';
+@import './mixins/width';
+
+// Core styles
+@import './background';
+@import './reset';
+@import './functions'; 
+@import './footer';
+@import './misc';
+@import './utilities';
+@import './demo';
+@import './typography';
+@import './spinner';
+
+@import './vertical-wrapper';
+@import './navbar';
+@import './sidebar';
+@import './layouts';
+
+// components
+@import "./components/accordions";
+@import "./components/badges";
+@import "./components/bootstrap-alert";
+@import "./components/breadcrumbs";
+@import "./components/buttons";
+@import "./components/cards";
+@import "./components/carousel";
+@import "./components/checkbox-radio";
+@import "./components/dashboard";
+@import "./components/datepicker";
+@import "./components/dropdown";
+@import "./components/forms";
+@import "./components/icons";
+@import "./components/input-group";
+@import "./components/list-group";
+@import "./components/modal";
+@import "./components/nav";
+@import "./components/pagination";
+@import "./components/popover";
+@import "./components/profile";
+@import "./components/rating";
+@import "./components/tables";
+@import "./components/timeline";
+@import "./components/chat";
+@import "./components/faq";
+@import "./components/auth";
+
+// Email
+@import "./components/email/inbox";
+@import "./components/email/email-read";
+@import "./components/email/email-compose";
+
+// Plugin styles
+@import '../../../node_modules/perfect-scrollbar/css/perfect-scrollbar.css';
+@import "../../../node_modules/highlight.js/styles/googlecode.css";
+// @import url("//at.alicdn.com/t/font_o5hd5vvqpoqiwwmi.css"); //(feather-font). github https://github.com/AT-UI/feather-font
+@import "../fonts/feather/style.css";
+@import "../../../node_modules/flag-icon-css/css/flag-icon.min.css";
+@import "../../../node_modules/@mdi/font/css/materialdesignicons.min.css";
+@import '../../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '../../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import '../../../node_modules/animate.css/animate.min.css';
+@import '../../../node_modules/@fullcalendar/common/main.min.css';
+@import '../../../node_modules/@fullcalendar/daygrid/main.min.css';
+@import '../../../node_modules/@fullcalendar/timegrid/main.min.css';
+@import '../../../node_modules/simplemde/dist/simplemde.min.css';
+@import "../../../node_modules/metismenujs/scss/metismenujs";
+@import '../../../node_modules/dropzone/dist/min/dropzone.min.css';
+@import '../../../node_modules/quill/dist/quill.snow.css';
+@import '../../../node_modules/simple-datatables/dist/style.css';
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+
+// Plugin overrides
+@import "./components/plugin-overrides/full-calendar";
+@import "./components/plugin-overrides/ng-select";
+@import "./components/plugin-overrides/ngx-chips";
+@import "./components/plugin-overrides/ngx-quill";
+@import "./components/plugin-overrides/perfect-scrollbar";
+@import "./components/plugin-overrides/simplemde";
+@import "./components/plugin-overrides/sweet-alert";
+@import "./components/plugin-overrides/dropzone";
+@import "./components/plugin-overrides/apex-charts";
+@import "./components/plugin-overrides/data-tables";

@@ -1,0 +1,14 @@
+<div *ngIf="user && selectedUser" [style]="{height : '100%'}">
+    
+    <!-- user profile details -->
+    <app-chat-message-header [selectedUser]="selectedUser"></app-chat-message-header>
+    <!-- user profile end -->
+
+    <!-- Rendering message list -->
+    <app-chat-message-body [selectedUser]="selectedUser" [messageList]="messageList" (onReplyClick)="replyClicked($event)"></app-chat-message-body>
+
+    <!-- Chat footer start -->
+    <app-chat-message-footer [replyMsgId]="replyMsgId" [replyMsgContent]="replyMsgContent" [selectedUser]="selectedUser"></app-chat-message-footer>
+
+    <!-- chat footer end -->
+</div>
