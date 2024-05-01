@@ -2,8 +2,6 @@
 using ChatApp.Context;
 using ChatApp.Context.EntityClasses;
 using ChatApp.Models.Chat;
-using ChatApp.Models.Group;
-using ChatApp.Models.GroupChat;
 using ChatApp.Models.Notification;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.SignalR;

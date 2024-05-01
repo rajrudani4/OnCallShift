@@ -6,14 +6,14 @@ import { UserService } from 'src/app/core/service/user.service';
 @Component({
     selector: 'app-status-component',
     templateUrl: 'status.component.html',
-    styleUrls : ['status.component.scss']
+    styleUrls: ['status.component.scss']
 })
 
 export class StatusComponent implements OnInit {
 
     user: LoggedInUser;
 
-    constructor(private userService : UserService, private signalrService : SignalrService) { }
+    constructor(private userService: UserService, private signalrService: SignalrService) { }
 
     ngOnInit() {
         this.userService.getUserSubject().subscribe(e => {
@@ -22,12 +22,14 @@ export class StatusComponent implements OnInit {
     }
 
 
-    updateStatus(status : string){
+    updateStatus(status: string) {
 
         this.userService.updateProfileStatus(status).subscribe(
-            (e : {status : string}) => {
+            (e: { status: string }) => {
                 this.user.profileStatus = e.status;
                 this.signalrService.updateProfileStatus(status, this.user.userName);
+                this.userService.getCurrentUserDetails();
+
             }
         )
     }

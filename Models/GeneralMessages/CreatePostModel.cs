@@ -4,6 +4,8 @@ namespace ChatApp.Models.GeneralMessages
 {
     public class CreatePostModel
     {
+            public int PostId { get; set; }
+
             [Required]
             public string Role { get; set; }
 
@@ -13,5 +15,7 @@ namespace ChatApp.Models.GeneralMessages
             public int PayPerHour { get; set; }
 
             public int AreaCode { get; set; }
+
+            public bool IsMyPosts { get; set; } = false;
     }
 }

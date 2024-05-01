@@ -19,6 +19,14 @@ const routes: Routes = [
         path: 'chat',
         loadChildren: () => import('./views/pages/chat/chat.module').then(m => m.ChatModule)
       },
+      {
+        path: 'profile',
+        loadChildren: () => import('./views/pages/profile/profile.module').then(m => m.ProfileModule)
+      },
+      {
+        path: 'general',
+        loadChildren: () => import('./views/pages/general/general.module').then(m => m.GeneralModule)
+      },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ]
   },

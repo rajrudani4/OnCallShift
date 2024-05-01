@@ -1,0 +1,105 @@
+<div *ngIf="user" [style]="{height : '100%'}">
+    
+    <div class="chat-header border-bottom px-2 pb-2">
+        <div class="d-flex justify-content-between">
+            <div class="d-flex align-items-center">
+                
+                <i class="feather icon-corner-up-left icon-md mr-2 ml-n2 text-muted d-lg-none"></i>
+                <div>
+                    <p># Your Job Posts</p>    
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center px-2 addPost mr-1" (click)="openModal(openComment)">
+                <i class="mdi mdi-plus icon-lg"></i>
+                <span class="mr-2">New</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rendering message list -->
+    <div class="chat-body row mt-3" style="width: 100%;" id="chat-body" [perfectScrollbar] #scrollContainer>
+        <div class="messages col-lg-4 col-md-6 mb-3" *ngFor="let message of messageList; let i = index">
+    
+            <div style="width: 100%; height: 100%;">
+              <div class="card text-dark border h-100">
+                <div class="card-header"><b>Area : </b> {{message.areaName}}</div>
+                <div class="card-body pb-0">
+                  <h5 class="card-title">{{message.role}} - ${{message.payPerHour}} Per Hour</h5>
+                  <p class="card-text">Description : {{message.desc}}</p>
+                </div>
+                
+                <div class="mx-4">
+                    <hr/>
+                </div>
+
+                <div class="d-flex justify-content-between px-3">
+                    <div class="d-flex ml-2 mb-2">
+                        <img [src]="getProfile(message.imageUrl)" class="img-xs rounded-circle" alt="avatar">
+                        <div class="d-flex flex-column bubble pl-2">
+                            <p class="text-success font-weight-bold">
+                                ~{{message.messageFromUsername}}
+                            </p>
+                            <p class="text-right">{{ message.createdAt | date : 'medium' }}</p>
+                        </div>
+                      </div>
+                      <div>
+                        <span (click)="openEditModal(openComment, message)">
+                            <i class="mdi mdi-pencil icon-md"></i>
+                        </span>
+                      </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+          <h4 class="p-4" *ngIf="messageList.length==0">No Data Found</h4>
+    </div>
+    
+
+</div>
+
+
+<ng-template tabindex="-1" aria-hidden="true" let-modal let-d="dismiss" #openComment>
+
+    <div class="modal-content">
+
+        <!--Header-->
+        <div class="modal-header">
+          <h5 class="modal-title" >Post a Job Requirement</h5>
+        </div>
+    
+            <div class="modal-body">
+                
+                <div class="form-group">
+                    <label for="name">Requirement For : </label>
+                    <input type="text" name="userName" class="form-control" [(ngModel)]="post.role" required>
+                </div>
+    
+                <div class="form-group">
+                <label for="name">Description : </label>
+                <input type="text" name="groupName" [(ngModel)]="post.desc" class="form-control" placeholder="Description" minlength="5" required maxlength="200">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Area : </label>
+                    <select class="form-select rounded-0 font-size-14" [(ngModel)]="post.areaCode" style="color: black;">
+                        <option *ngFor="let area of areas" [value]="area.id">{{area.name}}
+                        </option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                <label for="name">Pay Per Hour (in $) : </label>
+                <input class="form-control" name="description" [(ngModel)]="post.payPerHour" type="number" min="0" max="999">
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="modal.close()">Close</button>
+                <button type="submit" class="btn btn-primary" (click)="createPost();modal.close();" [disabled]="post.areaCode<=0 || post.desc=='' || post.role=='' || !post.payPerHour || post.payPerHour<0 || post.payPerHour>999">{{post.postId != 0 ? "Update" : "Add"}} Requirement</button>
+            </div>
+    </div>
+
+</ng-template>

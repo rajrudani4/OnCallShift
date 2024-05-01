@@ -16,6 +16,16 @@ export const MENU: MenuItem[] = [
     link: '/chat'
   },
   {
+    label: 'Your Posts',
+    icon: 'users',
+    link: 'general/myposts'
+  },
+  {
+    label: 'Job Posts',
+    icon: 'users',
+    link: 'general/allposts'
+  },
+  {
     label: 'Profile',
     isTitle: true
   },
