@@ -39,6 +39,7 @@ import { RatingComponent } from './rating/rating.component';
 import { TimepickerComponent } from './timepicker/timepicker.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { TypeaheadComponent } from './typeahead/typeahead.component';
+import { CodePreviewModule } from '../../partials/code-preview/code-preview.module';
 
 const routes: Routes = [
   {
@@ -155,6 +156,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    CodePreviewModule,
     NgbModule,
     PerfectScrollbarModule,
     FormsModule,

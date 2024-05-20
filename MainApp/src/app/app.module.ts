@@ -15,7 +15,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptor } from './core/helper/token-interceptor';
 import { AuthService } from './core/service/auth.service';
 import { NgModule } from '@angular/core';
-
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import {
   GoogleLoginProvider
@@ -24,7 +23,7 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorPageComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
